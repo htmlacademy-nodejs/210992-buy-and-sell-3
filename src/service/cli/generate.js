@@ -4,6 +4,7 @@ const fs = require(`fs`);
 const {
   getRandomInt,
   shuffle,
+  chalk
 } = require(`../../utils`);
 
 const DEFAULT_COUNT = 1;
@@ -84,17 +85,17 @@ module.exports = {
     const countOffer = Number.parseInt(count, 10) || DEFAULT_COUNT;
 
     if (countOffer > 1000) {
-      return console.error(`Не больше 1000 объявлений!`);
+      return console.error(chalk.red(`Не больше 1000 объявлений!`));
     }
 
     const content = JSON.stringify(generateOffers(countOffer), null, 2);
 
     fs.writeFile(FILE_NAME, content, (err) => {
       if (err) {
-        return console.error(`Can't write data to file...`);
+        return console.error(chalk.red(`Can't write data to file...`));
       }
 
-      return console.log(`Operation success. File created.`);
+      return console.log(chalk.green(`Operation success. File created.`));
     });
 
   }

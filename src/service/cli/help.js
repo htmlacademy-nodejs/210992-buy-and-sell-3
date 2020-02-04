@@ -18,6 +18,6 @@ module.exports = {
       --generate <count>    формирует файл mocks.json
     `;
 
-    console.log(chalk.hex('#646464')(text));
+    console.log(chalk.hex(`#646464`)(text));
   }
 };

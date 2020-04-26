@@ -1,0 +1,88 @@
+### Возвращает все объявления
+GET localhost:8090/api/offers
+Accept: application/json
+
+### Возвращает определенной объявление
+GET localhost:8090/api/offers/l9rgq5
+Accept: application/json
+
+### Возвращает список комментариев определённого объявления
+GET localhost:8090/api/offers/ZFytPR/comments
+Accept: application/json
+
+### Возвращает результаты поиска по заголовку
+GET localhost:8090/api/search?query=Отдам
+Accept: application/json
+
+### Удаляет из определённой публикации комментарий с идентификатором
+DELETE localhost:8090/api/offers/l9rgq5/comments/gvPWOW
+Content-Type: application/json
+
+### Удаляет определённое объявление
+DELETE localhost:8090/api/offers/l9rgq5
+Content-Type: application/json
+
+### Создаёт новое объявление
+POST localhost:8090/api/offers
+Content-Type: application/json
+
+{
+  "category": "категория",
+  "description": "описание",
+  "picture": "картинка",
+  "title": "заголовок",
+  "type": "тип объявления",
+  "sum": "стоимость"
+}
+
+### Создаёт новое объявление с ошибкой
+POST localhost:8090/api/offers
+Content-Type: application/json
+
+{
+  "category": "категория",
+  "description": "описание",
+  "picture": "картинка",
+  "title": "заголовок"
+}
+
+### Cоздаёт новый комментарий
+POST localhost:8090/api/offers/l9rgq5/comments
+Content-Type: application/json
+
+{
+  "id": "n0W4sb",
+  "text": "Новый комментарий!!!!!!!!"
+}
+
+### Редактирует определённое объявление
+PUT localhost:8090/api/offers/l9rgq5
+Content-Type: application/json
+
+{
+  "id": "l9rgq5",
+  "category": [
+    "Игры"
+  ],
+  "description": "Продаю с болью в сердце... Кажется, что это хрупкая вещь. Мой дед не мог её сломать. Товар в отличном состоянии.",
+  "picture": "item13.jpg",
+  "title": "Отдам в хорошие руки подшивку «Мурзилка».",
+  "type": "offer",
+  "sum": 100,
+  "comments": [
+    {
+      "id": "9p9yIL",
+      "text": "Почему в таком ужасном состоянии? Продаю в связи с переездом. Отрываю от сердца.  А сколько игр в комплекте? С чем связана продажа? Почему так дешёво? А где блок питания? Оплата наличными или перевод на карту?"
+    },
+    {
+      "id": "-_5XMT",
+      "text": "Оплата наличными или перевод на карту? С чем связана продажа? Почему так дешёво? Вы что?! В магазине дешевле. Неплохо, но дорого А сколько игр в комплекте? Продаю в связи с переездом. Отрываю от сердца. Совсем немного... А где блок питания?"
+    },
+    {
+      "id": "q6huv1",
+      "text": "Продаю в связи с переездом. Отрываю от сердца. Оплата наличными или перевод на карту? Почему в таком ужасном состоянии? А сколько игр в комплекте? Совсем немного... А где блок питания? "
+    }
+  ]
+}
+
+###

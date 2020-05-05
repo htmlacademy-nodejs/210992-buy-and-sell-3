@@ -2,7 +2,7 @@
 GET localhost:8090/api/offers
 Accept: application/json
 
-### Возвращает определенной объявление
+### Возвращает определенное объявление
 GET localhost:8090/api/offers/l9rgq5
 Accept: application/json
 
@@ -27,6 +27,7 @@ POST localhost:8090/api/offers
 Content-Type: application/json
 
 {
+  "id": "l9rgq5",
   "category": "категория",
   "description": "описание",
   "picture": "картинка",
